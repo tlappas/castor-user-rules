@@ -98,7 +98,7 @@ class Python(MergeRule):
         "toml":
             R(Text("toml")),
         "jason":
-            R(Text("toml")),
+            R(Text("json")),
         "identity is":
             R(Text(" is ")),
         "yield":
