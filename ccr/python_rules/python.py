@@ -13,13 +13,15 @@ from castervoice.lib.merge.mergerule import MergeRule
 from castervoice.lib.merge.state.short import R
 from castervoice.lib.temporary import Store, Retrieve
 
+if_words = '({} | iffy)'.format(SymbolSpecs.IF)
+else_words = '({} | Shelley)'.format(SymbolSpecs.ELSE)
 
 class Python(MergeRule):
 
     mapping = {
-        SymbolSpecs.IF:
+        if_words:
             R(Key("i,f,space,colon,left")),
-        SymbolSpecs.ELSE:
+        else_words:
             R(Text("else:") + Key("enter")),
         # (no switch in Python)
         SymbolSpecs.BREAK:
@@ -69,9 +71,9 @@ class Python(MergeRule):
             R(Text("False")),
 
         # Python specific
-        "sue {}".format(SymbolSpecs.IF):
+        "sue {}".format(if_words):
             R(Text("if ")),
-        "sue {}".format(SymbolSpecs.ELSE):
+        "sue {}".format(else_words):
             R(Text("else ")),
         "from":
             R(Text("from ")),
