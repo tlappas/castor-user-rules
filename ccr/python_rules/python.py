@@ -15,6 +15,7 @@ from castervoice.lib.temporary import Store, Retrieve
 
 if_words = '({} | iffy)'.format(SymbolSpecs.IF)
 else_words = '({} | Shelley)'.format(SymbolSpecs.ELSE)
+print_words = '({} | print)'.format(SymbolSpecs.SYSOUT)
 
 class Python(MergeRule):
 
@@ -47,7 +48,7 @@ class Python(MergeRule):
             R(Text(" or ")),
         SymbolSpecs.NOT:
             R(Text("!")),
-        SymbolSpecs.SYSOUT:
+        print_words:
             R(Store() + Text("print()") + Key("left") + Retrieve(action_if_text="right")),
         SymbolSpecs.IMPORT:
             R(Text("import ")),
