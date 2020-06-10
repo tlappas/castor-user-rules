@@ -69,9 +69,9 @@ class Python(MergeRule):
             R(Text("False")),
 
         # Python specific
-        "sue iffae":
+        "sue {}".format(SymbolSpecs.IF):
             R(Text("if ")),
-        "sue shells":
+        "sue {}".format(SymbolSpecs.ELSE):
             R(Text("else ")),
         "from":
             R(Text("from ")),
