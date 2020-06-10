@@ -81,7 +81,7 @@ class Python(MergeRule):
             R(Text(" not ")),
         "it are in":
             R(Text(" in ")),
-        "shell iffae | LFA":
+        "(Elvis | Elvish)":
             R(Key("e,l,i,f,space,colon,left")),
         "convert to character":
             R(Store() + Text("chr()") + Key("left") + Retrieve(action_if_text="right")),
